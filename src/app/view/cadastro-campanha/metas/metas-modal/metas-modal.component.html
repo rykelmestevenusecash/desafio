@@ -1,0 +1,54 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h2 class="modal-title" id="modal-basic-title">{{label}}</h2>
+    </div>
+    <div class="modal-body">
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" class="ind">
+                        <h3>Nro Loja</h3>
+                    </th>
+                    <th scope="col" class="ind">
+                        <h3>Meta</h3>
+                    </th>
+                    <th scope="col" class="ind">
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody *ngIf="lojas.length > 0">
+                <tr *ngFor="let lista of lojas;">
+                    <th scope="row">{{lista.codigo}}</th>
+                    <td>
+                        {{metaAtual(lista)}}
+                    </td>
+                    <td>
+                        <form [formGroup]="formulario">
+                            <input style="width: 10vw; margin: auto;" type="number" class="form-control" id="name"
+                                placeholder="informe a meta" (ngModelChange)="setMeta($event, lista)"
+                                formControlName="meta">
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="lojas.length == 0">
+                <tr>
+                    Nenhuma lista de produtos
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" id="voltButton"
+            (click)="modal.dismiss('Cross click')">Cancelar</button>
+        <button type="button" class="btn btn-outline-dark" id="salvar" (click)="enviar()">Confirmar</button>
+    </div>
+</ng-template>
+
+<div class="row">
+    <div class="col-6"><button type="button" id="avancButton" class="btn btn-secondary" (click)="open(content)">{{label}}</button>
+    </div>
+</div>

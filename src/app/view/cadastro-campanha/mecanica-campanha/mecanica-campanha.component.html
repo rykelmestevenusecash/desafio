@@ -1,0 +1,41 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h2 class="modal-title" id="modal-basic-title">Definir Mecânica da Campanha Verão 2021</h2>
+    </div>
+    <div class="modal-body">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Tipo de Mecânica: </span>
+                        <select class="form-select" aria-label="Default select example" [(ngModel)]="mecanicaObj.tipoMecanica">
+                            <option selected>Selecione...</option>
+                            <option *ngFor="let option of listProduto" [value]="option.nome">{{option.nome}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <label for="form-check">Forma de Apuração:</label>
+                    <div class="form-check form-check" *ngFor="let forma of formaApuracao">
+                        <input [value]="forma.nome" class="form-check-input" type="radio" name="forma"
+                            id="flexRadioDefault1" [(ngModel)]="mecanicaObj.formaApuracao">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            {{forma.nome}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" id="voltButton"
+            (click)="modal.dismiss('Cross click')">Cancelar</button>
+        <button type="button" class="btn btn-outline-dark" id="salvar"
+            (click)="emitAddEvent()">Confirmar</button>
+    </div>
+</ng-template>
+
+<button class="buttonMecanica" (click)="open(content)">Denifinir mecânica da campanha</button>

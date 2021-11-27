@@ -1,0 +1,31 @@
+.panel{
+    margin-top: 10vh;
+}
+body{
+    width:  800px;
+    height: 70vh;
+}
+div.ml-4.tab-content{
+    width: 70vw;
+}
+.nav-pills .nav-link.active{
+    background-color: #ff8c61;
+    color: white;
+}
+a{
+    color: #ff8c61;
+}
+a:hover{
+    color: #17475c;
+}
+#avancButton{
+    font-weight: 500;
+    background-color: #ff8c61;
+    color: white;
+    width: 20vw;
+    margin-bottom: 8vh;
+}
+footer{
+    width:  75vw;
+    margin: auto;
+}

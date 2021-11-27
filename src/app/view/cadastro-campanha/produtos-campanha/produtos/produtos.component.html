@@ -1,0 +1,71 @@
+<ng-template #content let-modal class="modal-content">
+    <div class="modal-header">
+        <h2 class="modal-title" id="modal-basic-title">Selecionar Produtos</h2>
+    </div>
+
+    <div class="modal-body">
+        <form class="d-flex" [formGroup]="searchForm">
+            <div class="input-group mb-3">
+                <input class="form-control me-2" type="search" placeholder="Informe o código ou o nome do produto"
+                    aria-label="Search" formControlName="searchControl">
+                <span class="input-group-text" id="basic-addon1">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+                </span>
+            </div>
+        </form>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" class="ind">
+                        <h3>Código</h3>
+                    </th>
+                    <th scope="col" class="ind">
+                        <h3>Produto</h3>
+                    </th>
+                    <th scope="col" class="ind">
+                        <h3>Ações</h3>
+                    </th>
+                </tr>
+            </thead>
+            <tbody *ngIf="listaDeProdutos.length > 0">
+                <tr *ngFor="let lista of listaDeProdutos;">
+                    <th scope="row">{{lista.codigo}}</th>
+                    <td>
+                        {{lista.nome}}
+                    </td>
+                    <td>
+                        <button *ngIf="exist(lista) != undefined" type="button" class="btn btn-outline-primary"
+                            id="voltButton" (click)="remover(lista)">Remover</button>
+                        <button *ngIf="exist(lista) == undefined" type="button" class="btn btn-outline-dark" id="salvar"
+                            (click)=" adicionar(lista)">Selecionar</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="listaDeProdutos.length == 0">
+                <tr>
+                    Nenhuma lista de produtos
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" id="voltButton"
+            (click)="modal.dismiss('Cross click')">Cancelar</button>
+        <button type="button" class="btn btn-outline-dark" id="salvar" (click)="modal.dismiss('Cross click')">Confirmar</button>
+    </div>
+</ng-template>
+
+
+
+
+<div class="row">
+    <div class="col-6"><button type="button" class="btn btn-primary" (click)="open(content)">Adicionar Produtos</button>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-6"><button type="button" class="btn btn-secondary" (click)="open(content)">Exibir Produtos</button>
+    </div>
+</div>

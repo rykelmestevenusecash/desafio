@@ -1,0 +1,66 @@
+<body>
+    <div id="panel">
+        <div class="row">
+            <div class="col-8">
+                <p>Nome: {{data.nome}}
+                <p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <p>Objetivo da campanha: {{data.objetivo}}
+                <p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5">
+                <p>Data de Início: {{data.dataInicio | date: 'dd/MM/yyyy'}}
+                <p>
+            </div>
+
+            <div class="col-5">
+                <p>Data Final: {{data.dataFinal | date: 'dd/MM/yyyy'}}
+                <p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Ciclo de Pagamento: {{data.cicloPagamento}}
+                <p>
+            </div>
+            <div class="col-5">
+                <p>Forma de Pagamento: {{data.formaPagamento}}
+                <p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <p>Qual dia da semana: {{data.diaSemana}}
+                <p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <p>Data 1º Pagamento: {{data.primeiroPagamento | date: 'dd/MM/yyyy'}}
+                <p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <p>Tem Meta: {{data.meta ? "Sim" : "Não"}}
+                <p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <p>Tipo meta: {{data.tipoMeta}}
+                <p>
+            </div>
+        </div>
+    </div>
+
+</body>

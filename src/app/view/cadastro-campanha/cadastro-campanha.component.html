@@ -1,0 +1,174 @@
+<body>
+    <div class="row">
+        <form [formGroup]="formulario" class="example-form">
+
+
+            <!-- Linha 1-->
+            <div class="row">
+                <div class="col-6">
+                    <label for="name" class="form-label">Nome da Campanha</label>
+                    <input type="text" class="form-control" id="name" placeholder="informe o nome da campanha"
+                        formControlName="nome">
+                </div>
+            </div>
+
+
+            <!-- Linha 2-->
+            <div class="row">
+                <div class="col-6">
+                    <label for="Objetivo" class="form-label">Objetivo da Campanha</label>
+                    <input type="text" class="form-control" id="Objetivo" placeholder="reduzir o estoque do produto"
+                        formControlName="objetivo">
+                </div>
+            </div>
+
+
+            <!-- Linha 3-->
+            <div class="row">
+                <div class="col-4">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Data de Início</span>
+                        <input type="date" class="form-control" placeholder="Username" aria-label="Username"
+                            formControlName="dataInicio" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Linha 4-->
+            <div class="row">
+                <div class="col-4">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Data Final</span>
+                        <input type="date" class="form-control" placeholder="Username" aria-label="Username"
+                            formControlName="dataFinal" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Linha 5-->
+            <div class="row">
+                <div class="col-8">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Ciclo de Pagamento: </span>
+                        <div class="form-check form-check-inline" *ngFor="let ciclo of ciclos">
+                            <input [value]="ciclo.nome" class="form-check-input" type="radio" name="cicloPagamento"
+                                formControlName="cicloPagamento" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                {{ciclo.nome}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Linha  6-->
+            <div class="row">
+                <div class="col-4">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Qual dia da Semana: </span>
+                        <select class="form-select" aria-label="Default select example" formControlName="diaSemana">
+                            <option selected>Selecione...</option>
+                            <option *ngFor="let option of semana" [value]="option.nome">{{option.nome}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Data do 1º Pagamento</span>
+                        <input type="date" class="form-control" placeholder="Username" aria-label="Username"
+                            formControlName="primeiroPagamento" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Linha 7 -->
+            <div class="row">
+                <div class="col-8">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Meta: </span>
+                        <div class="form-check form-check-inline" *ngFor="let meta of response">
+                            <input [value]="meta.value" class="form-check-input" type="radio" name="meta"
+                                formControlName="meta" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                {{meta.nome}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Linha 8 -->
+            <div class="row" *ngIf="formulario.value.meta">
+                <div class="col-8">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Tipo de Meta: </span>
+                        <div class="form-check form-check-inline" *ngFor="let tipo of tipoMeta">
+                            <input [value]="tipo.nome" class="form-check-input" type="radio" name="tipoMeta"
+                                formControlName="tipoMeta" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                {{tipo.nome}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Linha 9 -->
+            <div class="row">
+                <div class="col-8">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Forma de Pagamento: </span>
+                        <div class="form-check form-check-inline" *ngFor="let pagamento of pagamentos">
+                            <input [value]="pagamento.nome" class="form-check-input" type="radio" name="formaPagamento"
+                                formControlName="formaPagamento" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                {{pagamento.nome}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Linha 10 -->
+            <div class="row">
+                <div class="col-8">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Definir Mecânica: </span>
+                        <app-mecanica-campanha (mecanica)="receberDados($event)"></app-mecanica-campanha>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Linha 11 -->
+            <div class="row">
+                <div class="col-8">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">O vendedor precisa ter realizado o aceite da
+                            campanha pelo app? </span>
+                        <div class="form-check form-check-inline" *ngFor="let aceite of response">
+                            <input [value]="aceite.value" class="form-check-input" type="radio" name="aceiteApp"
+                                formControlName="aceiteApp" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                {{aceite.nome}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <div class="row" style="float: right;">
+            <div class="col-6">
+                <button type="submit" class="btn btn-light" id="avancButton" [disabled]="!getValid()"
+                    (click)="salvar()">Avançar</button>
+            </div>
+        </div>
+    </footer>
+</body>

@@ -1,0 +1,10 @@
+footer{
+    width: 80vw;
+}
+#avancButton{
+    font-weight: 500;
+    background-color: #ff8c61;
+    color: white;
+    width: 20vw;
+    margin-bottom: 8vh;
+}

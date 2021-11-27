@@ -1,0 +1,39 @@
+.sidenav {
+    background-color: #eeeeee;
+    width: 220px;
+}
+
+.sidenav a {
+    color: #ff8c61;
+}
+
+.sidenav i {
+    padding-right: 10px;
+}
+
+.content {
+    padding: 16px;
+    background-color: white;
+}
+.container{
+    display: contents;
+}
+.nav-list{
+    /* padding: 10px; */
+}
+.expPan{
+    background-color:#eeeeee ;
+    /* border-radius: 0 !important; */
+}
+mat-panel-title{
+    font-size: 16px;
+    color: #17475c!important;
+
+}
+.navigate{
+    color: #17475c!important;
+    text-decoration: none;
+}
+.navigate:hover{
+    color: rgb(233, 232, 232) !important;
+}

@@ -1,0 +1,59 @@
+<h1>Criar a Lista de Produtos</h1>
+<form [formGroup]="formulario">
+    <div class="row linha">
+        <div class="col-6">
+            <label for="name" class="form-label">Nome da Lista</label>
+            <input type="text" class="form-control" id="name" placeholder="Genérico e Similar" formControlName="nome">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <button type="button" class="btn" id="salvar" (click)="salvar()" [disabled]="!formulario.valid"
+                autocomplete="off">Adicionar</button>
+        </div>
+    </div>
+
+    <!-- {{listProdutos | json}} -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col" class="ind">
+                    <h3>ID</h3>
+                </th>
+                <th scope="col" class="ind">
+                    <h3>Lista</h3>
+                </th>
+                <th scope="col" class="ind">
+                    <h3>Quantidade de Produtos</h3>
+                </th>
+                <th scope="col" class="ind">
+                    <h3>Ações</h3>
+                </th>
+            </tr>
+        </thead>
+        <tbody *ngIf="listProdutos.length > 0">
+            <tr *ngFor="let lista of listProdutos;">
+                <th scope="row">{{lista.id}}</th>
+                <td>
+                    {{lista.nome}}
+                </td>
+                <td>{{lista.produtos.length}}</td>
+                <td>
+                    <app-produtos [categoriaProdutos]="lista"></app-produtos>
+                </td>
+            </tr>
+        </tbody>
+        <tbody *ngIf="listProdutos.length == 0">
+            <tr>
+                Nenhuma lista de produtos
+            </tr>
+        </tbody>
+    </table>
+</form>
+
+<footer>
+    <div class="row" style="float: right;">
+        <button type="submit" class="btn btn-light" id="avancButton" [disabled]="validate() == true"
+            (click)="router.navigate(['/cadastro-campanha/parte-3/',this.route.snapshot.params['id']])">Avançar</button>
+    </div>
+</footer>

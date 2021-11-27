@@ -1,0 +1,273 @@
+{
+  "campanha": [
+    {
+      "nome": "s",
+      "objetivo": "u",
+      "dataInicio": "2021-11-10",
+      "dataFinal": "2021-11-19",
+      "cicloPagamento": "Mensal",
+      "diaSemana": "Quarta",
+      "primeiroPagamento": "2021-11-15",
+      "meta": true,
+      "tipoMeta": "Por unidade vendido",
+      "formaPagamento": "Em dinheiro da conta UseCash",
+      "aceiteApp": true,
+      "tipoMecanica": "Um fornecedor",
+      "lojas": [
+        {
+          "id": 1,
+          "codigo": 123,
+          "nome": "Av. Paulista",
+          "listaProdutos": [
+            {
+              "id": 1,
+              "idCampanha": 13,
+              "nome": "Ética",
+              "produtos": [
+                {
+                  "id": 3,
+                  "nome": "Tylennol",
+                  "codigo": 231
+                }
+              ],
+              "meta": 3333
+            },
+            {
+              "nome": "Líquidos",
+              "idCampanha": "13",
+              "quantidadeProdutos": 0,
+              "produtos": [
+                {
+                  "id": 3,
+                  "nome": "Tylennol",
+                  "codigo": 231
+                },
+                {
+                  "id": 2,
+                  "nome": "Protetor Solar",
+                  "codigo": 321
+                },
+                {
+                  "id": 1,
+                  "nome": "omeoprazol",
+                  "codigo": 123
+                }
+              ],
+              "meta": 12,
+              "id": 2
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "codigo": 888,
+          "nome": "Rua Muricy Ramalho",
+          "listaProdutos": [
+            {
+              "id": 1,
+              "idCampanha": 13,
+              "nome": "Ética",
+              "produtos": [
+                {
+                  "id": 3,
+                  "nome": "Tylennol",
+                  "codigo": 231
+                }
+              ],
+              "meta": 54
+            },
+            {
+              "nome": "Líquidos",
+              "idCampanha": "13",
+              "quantidadeProdutos": 0,
+              "produtos": [
+                {
+                  "id": 3,
+                  "nome": "Tylennol",
+                  "codigo": 231
+                },
+                {
+                  "id": 2,
+                  "nome": "Protetor Solar",
+                  "codigo": 321
+                },
+                {
+                  "id": 1,
+                  "nome": "omeoprazol",
+                  "codigo": 123
+                }
+              ],
+              "meta": 321,
+              "id": 2
+            }
+          ]
+        }
+      ],
+      "formaApuracao": "por valor de venda do produto",
+      "id": 13
+    },
+    {
+      "nome": "Melhorar as vendas",
+      "objetivo": "Melhorar as vendas",
+      "dataInicio": "2021-11-27",
+      "dataFinal": "2022-01-27",
+      "cicloPagamento": "Semanal",
+      "diaSemana": "Segunda",
+      "primeiroPagamento": "2021-12-27",
+      "meta": true,
+      "tipoMeta": "Por unidade vendido",
+      "formaPagamento": "Em dinheiro da conta UseCash",
+      "aceiteApp": true,
+      "tipoMecanica": "Grupo de fornecedor",
+      "formaApuracao": "por meta de lista de produto alcançada",
+      "lojasDaCampanha": [],
+      "id": 14,
+      "lojas": [
+        {
+          "id": 1,
+          "codigo": 888,
+          "nome": "Rua Muricy Ramalho",
+          "listaProdutos": [
+            {
+              "id": 1,
+              "idCampanha": 13,
+              "nome": "Ética",
+              "produtos": [
+                {
+                  "id": 3,
+                  "nome": "Tylennol",
+                  "codigo": 231
+                }
+              ],
+              "meta": 312
+            },
+            {
+              "nome": "Líquidos",
+              "idCampanha": "13",
+              "quantidadeProdutos": 0,
+              "produtos": [
+                {
+                  "id": 3,
+                  "nome": "Tylennol",
+                  "codigo": 231
+                },
+                {
+                  "id": 2,
+                  "nome": "Protetor Solar",
+                  "codigo": 321
+                },
+                {
+                  "id": 1,
+                  "nome": "omeoprazol",
+                  "codigo": 123
+                }
+              ],
+              "meta": 12,
+              "id": 2
+            },
+            {
+              "nome": "Dor de Cabeça",
+              "idCampanha": "14",
+              "quantidadeProdutos": 0,
+              "produtos": [
+                {
+                  "id": 3,
+                  "nome": "Tylennol",
+                  "codigo": 231
+                }
+              ],
+              "meta": 345,
+              "id": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "listaProdutos": [
+    {
+      "id": 1,
+      "idCampanha": 13,
+      "nome": "Ética",
+      "produtos": [
+        {
+          "id": 3,
+          "nome": "Tylennol",
+          "codigo": 231
+        }
+      ]
+    },
+    {
+      "nome": "Líquidos",
+      "idCampanha": "13",
+      "quantidadeProdutos": 0,
+      "produtos": [
+        {
+          "id": 3,
+          "nome": "Tylennol",
+          "codigo": 231
+        },
+        {
+          "id": 2,
+          "nome": "Protetor Solar",
+          "codigo": 321
+        },
+        {
+          "id": 1,
+          "nome": "omeoprazol",
+          "codigo": 123
+        }
+      ],
+      "meta": 500,
+      "id": 2
+    },
+    {
+      "nome": "Dor de Cabeça",
+      "idCampanha": "14",
+      "quantidadeProdutos": 0,
+      "produtos": [
+        {
+          "id": 3,
+          "nome": "Tylennol",
+          "codigo": 231
+        }
+      ],
+      "meta": 500,
+      "id": 3
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "omeoprazol",
+      "codigo": 123
+    },
+    {
+      "id": 2,
+      "nome": "Protetor Solar",
+      "codigo": 321
+    },
+    {
+      "id": 3,
+      "nome": "Tylennol",
+      "codigo": 231
+    }
+  ],
+  "lojas": [
+    {
+      "id": 1,
+      "codigo": 123,
+      "nome": "Av. Paulista"
+    },
+    {
+      "id": 2,
+      "codigo": 1528,
+      "nome": "Av. Brasil"
+    },
+    {
+      "id": 1,
+      "codigo": 888,
+      "nome": "Rua Muricy Ramalho"
+    }
+  ]
+}

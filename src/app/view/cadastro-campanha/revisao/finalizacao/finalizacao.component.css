@@ -1,0 +1,13 @@
+body{
+    width: 30%;
+    margin: auto;
+    height: 50%;
+}
+.text{
+    width: 60%;
+    margin: auto;
+}
+h1{
+   font-size: 35px; 
+   color: #7bbf6a;
+}

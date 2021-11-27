@@ -1,0 +1,66 @@
+<!-- <nav ngbNav #nav="ngbNav" class="nav-tabs">
+    <ng-container ngbNavItem>
+        <a ngbNavLink>Dados</a>
+        <ng-template ngbNavContent>
+            <app-dados></app-dados>
+        </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+        <a ngbNavLink>Mecânica</a>
+        <ng-template ngbNavContent>
+            <app-mecanica></app-mecanica>
+            <app-metas label="Visualizar Metas"></app-metas>
+        </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+        <a ngbNavLink>Meta</a>
+        <ng-template ngbNavContent>
+            <app-mecanica></app-mecanica>
+        </ng-template>
+    </ng-container>
+</nav>
+
+
+
+ -->
+
+
+
+
+
+<body>
+
+    <div class="d-flex panel">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
+            <li ngbNavItem="top">
+                <a ngbNavLink>Dados</a>
+                <ng-template ngbNavContent>
+                    <app-dados></app-dados>
+                </ng-template>
+            </li>
+            <li ngbNavItem="middle">
+                <a ngbNavLink>Mecânica</a>
+                <ng-template style="width: 300px;" ngbNavContent>
+                    <app-mecanica></app-mecanica>
+                    <app-metas label="Visualizar Metas"></app-metas>
+                </ng-template>
+            </li>
+            <li [disabled]="true" ngbNavItem="bottom">
+                <a ngbNavLink>Meta</a>
+                <ng-template ngbNavContent>
+                    <app-mecanica></app-mecanica>
+                </ng-template>
+            </li>
+        </ul>
+
+        <div [ngbNavOutlet]="nav" class="ml-4"></div>
+    </div>
+</body>
+
+<footer>
+    <div class="row" style="float: right;">
+        <div class="col-6">
+            <button type="submit" class="btn btn-light" id="avancButton" (click)="router.navigate(['/cadastro-campanha/finalizacao'])" >Avançar</button>
+        </div>
+    </div>
+</footer>

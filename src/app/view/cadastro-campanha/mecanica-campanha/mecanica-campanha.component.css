@@ -1,0 +1,44 @@
+.buttonMecanica{
+    border-radius: 15px;
+    background-color: #ff8c61;
+    color:white ;
+    font-weight: 500;
+    border: none;
+    padding: 8px;
+}
+.buttonMecanica:hover{
+
+    background-color: #17475c;
+    color: #ff8c61;
+}
+
+.modal-header{
+    background-color:#ff8c61 ;
+    color: white;
+}
+
+#voltButton{
+    border-color:#17475c; 
+    color: #17475c;
+    text-decoration: none;
+}
+#voltButton:hover{
+    background-color: rgb(243, 243, 243);
+}
+#salvar{
+    background-color:#ff8c61 ;
+    border: none;
+    color: white;
+}
+span{
+    background-color: white !important ;
+    color: #17475c;
+    border: none;
+    font-weight: 500;
+    font-size: 15px;
+}
+label{
+    color: #17475c;
+    font-weight: 500;
+    font-size: 15px;
+}

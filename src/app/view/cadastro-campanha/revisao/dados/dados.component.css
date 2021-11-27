@@ -1,0 +1,18 @@
+body{
+    margin-top: 8vh;
+    margin-left: 5vw;
+    width: 70vw;
+    margin: auto;
+}
+#panel{
+    border: 1px #17475c solid;
+    padding: 10px;
+    border-radius: 15px;
+}
+p{
+    font-weight: 500;
+    color: #17475c;
+}
+.row{
+    margin-top: 2vh;
+}

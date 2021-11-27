@@ -1,0 +1,22 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true">
+        <mat-nav-list class="nav-list">
+
+            <mat-accordion multi>
+                <mat-expansion-panel *ngFor="let item of menuList" class="expPan" (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{item.item}}
+                        </mat-panel-title>
+                        
+                    </mat-expansion-panel-header>
+                    <a class="navigate" [routerLink]="item.rota"><p>{{item.conteudo}}</p></a>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

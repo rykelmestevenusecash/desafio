@@ -1,0 +1,50 @@
+<h1 *ngIf="label == 'Definir Metas'">Metas</h1>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col" class="ind">
+                    <h3>ID</h3>
+                </th>
+                <th scope="col" class="ind">
+                    <h3>Lista</h3>
+                </th>
+                <th scope="col" class="ind">
+                    <h3>Número de Lojas</h3>
+                </th>
+                <th scope="col" class="ind">
+                    <h3>Quantidade de Produtos</h3>
+                </th>
+                <th scope="col" class="ind">
+                    <h3>Ações</h3>
+                </th>
+            </tr>
+        </thead>
+        <tbody *ngIf="listProdutos.length > 0">
+            <tr *ngFor="let item of listProdutos">
+                <th scope="row">{{item.id}}</th>
+                <td>
+                    {{item.nome}}
+                </td>
+                <td>
+                    {{campanha.lojas.length}}
+                </td>
+                <td>{{item.produtos.length}}</td>
+                <td>
+                    <app-metas-modal [label]="label" [lojas]="campanha.lojas" [idListaProdutos]="item.id" (lojasMeta)="setLojas($event)"></app-metas-modal>
+                </td>
+            </tr>
+        </tbody>
+        <tbody *ngIf="listProdutos.length == 0">
+            <tr>
+                Nenhuma lista de produtos
+            </tr>
+        </tbody>
+    </table>
+
+
+<footer>
+    <div class="row" style="float: right;">
+        <button *ngIf="label == 'Definir Metas'" type="submit" class="btn btn-light" id="avancButton" (click)="Router.navigate(['/cadastro-campanha/revisao/',this.route.snapshot.params['id']])">Avançar</button>
+    </div>
+</footer>

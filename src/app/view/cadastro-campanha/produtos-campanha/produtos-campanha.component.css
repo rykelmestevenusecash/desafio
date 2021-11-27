@@ -1,0 +1,49 @@
+.ind{
+    border-top: none;
+    color:#17475c ;
+    font-weight: 500;
+    padding: 0px !important;
+    padding-left: 15px !important;
+}
+h3{
+    color:#17475c ;
+    font-weight: 600;
+}
+.table>:not(:last-child)>:last-child>*{
+    border-bottom-color: #dee1e6;
+}
+label{
+    color: #17475c;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.linha{
+    padding: 20px 0px 10px 0px;
+}
+.row{
+    margin-top: 4px;
+}
+#salvar{
+    margin-bottom: 5vh;
+    background-color:#ff8c61 ;
+    border: none;
+    color: white;
+}
+#avancButton{
+    font-weight: 500;
+    background-color: #ff8c61;
+    color: white;
+    width: 20vw;
+    margin-bottom: 8vh;
+}
+#voltButton{
+    border-color:#ff8c61; ;
+    color: #ff8c61;
+}
+#voltButton:hover{
+    background-color: rgb(243, 243, 243);
+}
+footer{
+    width: 80vw;
+}
